@@ -12,7 +12,7 @@ import com.example.movieappmad24.screens.WatchlistScreen
 
 @Composable
 fun Navigation() {
-    val navController = rememberNavController() // create a NavController instance
+    val navController = rememberNavController()
 
     NavHost(navController = navController,
         startDestination = Screen.Home.route) {

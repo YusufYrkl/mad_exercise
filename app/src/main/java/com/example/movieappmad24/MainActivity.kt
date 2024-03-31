@@ -93,7 +93,7 @@ fun NavigationBarComponent() {
 
 @Composable
 fun IconButtonItem(icon: ImageVector, label: String) {
-    IconButton(onClick = { /* navigation logic */ }) {
+    IconButton(onClick = {}) {
         Icon(icon, contentDescription = label)
     }
 }

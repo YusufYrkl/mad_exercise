@@ -123,7 +123,7 @@ fun MovieCardHeader(imageUrl: String, onItemClick: () -> Unit) {
             .fillMaxWidth(),
         contentAlignment = Alignment.Center
     ) {
-        MovieImage(imageUrl, onItemClick) // Pass the click event to the MovieImage
+        MovieImage(imageUrl, onItemClick)
         FavoriteIcon()
     }
 }
@@ -140,15 +140,14 @@ fun MovieImage(imageUrl: String, onItemClick: () -> Unit){
         loading = { CircularProgressIndicator() },
         modifier = Modifier
             .fillMaxWidth()
-            .clickable { onItemClick() } // Make only the image clickable
+            .clickable { onItemClick() }
     )
 }
 
 @Composable
 fun FavoriteIcon() {
-    var isFavorite by remember { mutableStateOf(false) } // Keeps track of favorite state
-
-    val iconTint = if (isFavorite) Color.White else Color.Gray // Tint color based on favorite state
+    var isFavorite by remember { mutableStateOf(false) }
+    val iconTint = if (isFavorite) Color.White else Color.Gray
 
     Box(
         modifier = Modifier
@@ -160,7 +159,7 @@ fun FavoriteIcon() {
             tint = Color.White,
             imageVector = if (isFavorite) Icons.Filled.Favorite else Icons.Default.FavoriteBorder,
             contentDescription = "Add to favorites",
-            modifier = Modifier.clickable { isFavorite = !isFavorite } // Toggle favorite on click
+            modifier = Modifier.clickable { isFavorite = !isFavorite } 
         )
     }
 }

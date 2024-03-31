@@ -29,7 +29,7 @@ import com.example.movieappmad24.models.findMovieById
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailScreen(movieId: String?, navController: NavController) {
-    val movie = findMovieById(movieId) ?: return // Early exit if the movie is not found
+    val movie = findMovieById(movieId) ?: return
 
     Scaffold(
         topBar = {
@@ -55,10 +55,10 @@ fun DetailScreen(movieId: String?, navController: NavController) {
         },
         content = { innerPadding ->
             Column(
-                modifier = Modifier.padding(innerPadding) // Apply the innerPadding here
+                modifier = Modifier.padding(innerPadding)
             ) {
                 movie?.let {
-                    MovieRow(movie = it) // Removed !! to avoid potential crashes
+                    MovieRow(movie = it)
                     LazyRow {
                         items(it.images.drop(1)) { image ->
                             AsyncImage(
