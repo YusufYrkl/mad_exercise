@@ -151,3 +151,12 @@ fun getMovies(): List<Movie> {
 
         )
 }
+
+fun findMovieById(movieId : String?) : Movie? {
+    for(i in getMovies()){
+        if (i.id == movieId)
+            return i;
+    }
+
+    return null;
+}
